@@ -40,7 +40,7 @@ pyportal = PyPortal(url='',
 ts = adafruit_touchscreen.Touchscreen(board.TOUCH_XL, board.TOUCH_XR,
                                       board.TOUCH_YD, board.TOUCH_YU,
                                       calibration=((5200, 59000), (5800, 57000)),
-                                      size=(320, 240))
+                                      size=(480, 320))
 p_list = []
 while True :
 
