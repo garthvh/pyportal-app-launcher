@@ -40,7 +40,7 @@ pyportal = PyPortal(url='',
 ts = adafruit_touchscreen.Touchscreen(board.TOUCH_XL, board.TOUCH_XR,
                                       board.TOUCH_YD, board.TOUCH_YU,
                                       calibration=((5200, 59000), (5800, 57000)),
-                                      size=(480, 320))
+                                      size=(WIDTH, HEIGHT))
 p_list = []
 while True :
 
@@ -80,30 +80,31 @@ while True :
         # Column A
         if x > 22.5 and x < 147.5:
 
-          # Icon/Button A1
+          # Icon/Button A1 - Mute Teams
           if y > 20 and y < 145:
             kbd.send(Keycode.CONTROL,Keycode.SHIFT, Keycode.M)  
-          # Icon/Button A2
+          # Icon/Button A2 - VS Code
           elif y > 175 and y < 300:
-            kbd.send(Keycode.CONTROL,Keycode.ALT, Keycode.DELETE)
+            kbd.send(Keycode.CONTROL,Keycode.SHIFT, Keycode.ALT, Keycode.C)
 
         # Column B
         elif x > 177.5 and x < 302.5:
-          # Icon/Button B1 
+          # Icon/Button B1 - Jellyfin
           if y > 20 and y < 145:
-            kbd.send(Keycode.CONTROL,Keycode.ALT, Keycode.DELETE)
+            kbd.send(Keycode.CONTROL,Keycode.SHIFT, Keycode.ALT, Keycode.J)
           # Icon/Button B2
           elif y > 175 and y < 300:
             kbd.send(Keycode.CONTROL,Keycode.ALT, Keycode.DELETE)
 
         # Column C
         elif x > 332.5 and x < 457.5:
-          # Icon/Button C1 
+          # Icon/Button C1 - Prusa MK3 FlashAir Website
           if y > 20 and y < 145:
-            kbd.send(Keycode.CONTROL,Keycode.ALT, Keycode.DELETE)
-          # Icon/Button C2
+            kbd.send(Keycode.CONTROL, Keycode.SHIFT, Keycode.ALT, Keycode.P)
+            
+          # Icon/Button C2 - Terminal
           elif y > 175 and y < 300:
-            kbd.send(Keycode.CONTROL,Keycode.ALT, Keycode.DELETE)
+            kbd.send(Keycode.CONTROL,Keycode.SHIFT, Keycode.ALT, Keycode.T)
 
         # clear list for next detection
         p_list = []
